@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', event => {
     const responsiveNavItems = document.querySelectorAll('#navbarResponsive .nav-link');
 
     responsiveNavItems.forEach(responsiveNavItem => {
-        responsiveNavItem.addEventListener('click', () => {
+        responsiveNavItem.addEventListener('touchend', () => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();
             }

@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', event => {
     if (sideNav) {
         new bootstrap.ScrollSpy(sideNav, {
             target: '#navbarResponsive',
-            rootMargin: '0px 0px -40%',
         });
     }
 
@@ -14,7 +13,7 @@ window.addEventListener('DOMContentLoaded', event => {
     const responsiveNavItems = document.querySelectorAll('#navbarResponsive .nav-link');
 
     responsiveNavItems.forEach(responsiveNavItem => {
-        responsiveNavItem.addEventListener('touchend', () => {
+        responsiveNavItem.addEventListener('click', () => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();
             }

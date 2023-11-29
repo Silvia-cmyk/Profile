@@ -50,7 +50,7 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
+  --bs-body-color: 8f9491;
   --bs-body-bg: #fff;
   --bs-border-width: 1px;
   --bs-border-style: solid;
@@ -140,6 +140,8 @@ h3, .h3 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  text-align: justify; /* 將文字向左對齊 */
+  text-align-last: left; /* 控制最後一行文字向左對齊 */
 }
 
 
@@ -342,6 +344,7 @@ button:not(:disabled),
     transition: none;
   }
 }
+
 .nav-link:hover, .nav-link:focus {
   color: var(--bs-nav-link-hover-color);
 }
@@ -582,7 +585,7 @@ button:not(:disabled),
 
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: #2a9d8f !important;
 }
 
 .text-warning {
@@ -592,7 +595,7 @@ button:not(:disabled),
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #264653  !important;
 }
 
 .rounded-circle {
@@ -906,7 +909,7 @@ section.resume-section .resume-section-content {
   bottom: 0;
   left: 20px;
   width: 2px;
-  background: #bd5d38; /* 時間軸線的顏色 */
+  background: #264653; /* 時間軸線的顏色 */
 }
 
 .timeline li:last-child {
@@ -923,3 +926,62 @@ section.resume-section .resume-section-content {
   border-color: transparent #fff transparent transparent; /*箭頭顏色*/
 }
 
+/* 工作經歷樣式 */
+.timeline-content.work-experience {
+  background: #f4a261; /* 工作經歷的顏色 */
+}
+
+/* 學業經歷樣式 */
+.timeline-content.education {
+  background: #e9c46a; /* 學業經歷的顏色 */
+}
+
+/*icon size*/
+.custom-icon {
+  width: 50px; /* 設定寬度 */
+  height: 50px; /* 設定高度 */
+  vertical-align: middle; /* 垂直置中 */
+  margin-bottom: 10px; /* 試著微調圖片的位置 */
+}
+/* 基本的 card 样式 */
+.card {
+  width: 300px; 
+  margin: 10px; 
+  overflow: hidden; /* 隐藏溢出内容 */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+  transition: transform 0.3s ease; /* 添加 hover 效果 */
+}
+/* .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+.card:hover {
+  transform: scale(1.1);
+  z-index: 1;
+} 
+/* 新增的 CSS 屬性，使用 Flexbox 排列卡片 */
+.gallery {
+  display: flex; /* 使用 Flexbox 排列元素 */
+  flex-wrap: wrap; /* 在需要時自動換行 */
+  justify-content: space-between; /* 卡片水平分布 */
+  align-items: stretch; /* 垂直方向填滿空間 */
+}
+
+/* 图片样式 */
+.card img {
+  width: 100%; /* 图片宽度 100% */
+  height: auto; /* 根据宽度自适应高度 */
+  object-fit: cover; /* 图片裁剪 */
+}
+
+/* 文字样式 */
+.card-body {
+  padding: 15px; /* 文字区域内边距 */
+  text-align: center; /* 文字居中 */
+  background-color: #f9f9f9; /* 背景颜色 */
+}
+
+.card-text {
+  margin-bottom: 0; /* 移除文字底部间距 */
+}

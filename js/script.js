@@ -23,3 +23,17 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 });
+// 取得所有的時間軸項目
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+// 為每個時間軸項目添加滑鼠移入移出事件監聽器
+timelineItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.classList.add('expanded');
+    });
+
+    item.addEventListener('mouseleave', () => {
+        item.classList.remove('expanded');
+    });
+});
+

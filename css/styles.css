@@ -871,7 +871,12 @@ section.resume-section .resume-section-content {
     overflow-y: auto;
   }
 }
+
 /* 新增的 CSS 規則 */
+.resume-section-content {
+  position: relative;
+}
+
 .timeline {
   list-style: none;
   padding: 0;
@@ -879,41 +884,62 @@ section.resume-section .resume-section-content {
 }
 
 .timeline li {
+  margin-bottom: 30px;
   position: relative;
-  padding-left: 40px;
-  margin-bottom: 50px;
 }
 
 .timeline-content {
   background: #fff;
   padding: 20px;
   border-radius: 5px;
-  position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+  width: 70%; /* 請按需求調整寬度 */
+  margin-left: 20px; /* 請調整間距 */
+}
+
+.timeline-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #264653; /* 圖示背景顏色 */
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  left: -35px;
+  top: 0;
+}
+
+.timeline-content .date {
+  font-weight: bold;
+  color: #264653; /* 日期文字顏色 */
+  margin-bottom: 8px;
 }
 
 .timeline-content h3 {
-  margin-top: 0;
+  margin: 0;
+  font-size: 18px;
 }
 
-.timeline-content p,
-.timeline-content .subheading,
-.timeline-content .text-primary {
-  margin-bottom: 0;
+/* 額外內容 */
+.extra-content {
+  display: none;
+  margin-top: 10px;
 }
 
-.timeline:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 20px;
-  width: 2px;
-  background: #264653; /* 時間軸線的顏色 */
+/* 滑鼠 hover 時的額外內容 */
+.timeline-item:hover .extra-content {
+  display: block;
 }
 
-.timeline li:last-child {
-  margin-bottom: 0;
+/* 展開時的額外內容 */
+.timeline-item.expanded .extra-content {
+  display: block;
 }
 
 /* 工作經歷樣式 */
@@ -925,6 +951,14 @@ section.resume-section .resume-section-content {
 .timeline-content.education {
   background: #e9c46a; /* 學業經歷的顏色 */
 }
+
+/* Font Awesome 圖示 */
+.fa-briefcase,
+.fa-graduation-cap {
+  /* 這部分根據你使用的圖示庫進行調整 */
+  font-family: 'Font Awesome'; /* 請替換成你的圖示庫 */
+}
+
 
 /*icon size*/
 .custom-icon {

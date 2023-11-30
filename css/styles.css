@@ -896,7 +896,7 @@ section.resume-section .resume-section-content {
   position: relative;
   transition: transform 0.3s ease-in-out;
   z-index: 1;
-  width: 70%; /* 請按需求調整寬度 */
+  width: auto; /* 請按需求調整寬度 */
   margin-left: 20px; /* 請調整間距 */
 }
 

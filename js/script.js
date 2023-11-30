@@ -1,7 +1,6 @@
 
 window.addEventListener('DOMContentLoaded', event => {
 
-    // Activate Bootstrap scrollspy on the main nav element
     const sideNav = document.body.querySelector('#sideNav');
     if (sideNav) {
         new bootstrap.ScrollSpy(document.body, {
@@ -10,7 +9,6 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     };
 
-    // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
@@ -23,10 +21,9 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 });
-// 取得所有的時間軸項目
+
 const timelineItems = document.querySelectorAll('.timeline-item');
 
-// 為每個時間軸項目添加滑鼠移入移出事件監聽器
 timelineItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
         item.classList.add('expanded');
